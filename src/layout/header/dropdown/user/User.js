@@ -33,6 +33,19 @@ const User = () => {
       <DropdownMenu end className="dropdown-menu-md dropdown-menu-s1">
         <div className="dropdown-inner">
           <LinkList>
+            {
+              localStorage.getItem("role") === "Employer" ?
+              <a href={`${process.env.PUBLIC_URL}/my-profile`}>
+              <Icon name="user"></Icon>
+              <span>Profile</span>
+            </a> : 
+            <a href={`${process.env.PUBLIC_URL}/my-profile2`}>
+            <Icon name="user"></Icon>
+            <span>Profile</span>
+          </a>
+            }
+          </LinkList>
+          <LinkList>
             <a href={`${process.env.PUBLIC_URL}/auth`}>
               <Icon name="signout"></Icon>
               <span>Sign Out</span>

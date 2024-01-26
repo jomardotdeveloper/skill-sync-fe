@@ -127,10 +127,12 @@ import LayoutNoSidebar from "../layout/Index-nosidebar";
 import Dashboard from "../webpages/admin/Dashboard";
 import Employer from "../webpages/admin/Employer";
 import Jobseeker from "../webpages/admin/Jobseeker";
-import Auth from "../webpages/Login";
-import RegisterEmployer from "../webpages/RegisterEmployer";
-import Job from "../webpages/main/Job";
-import RegisterJobseeker from "../webpages/RegisterJobseeker";
+import Auth from "../web_modules/Login";
+import RegisterEmployer from "../web_modules/RegisterEmployer";
+import Job from "../web_modules/main/Job";
+import RegisterJobseeker from "../web_modules/RegisterJobseeker";
+import Profile from "../web_modules/main/Profile";
+import ProfileJB from "../web_modules/main/ProfileJobseeker";
 const Router = () => {
   const location = useLocation();
   useLayoutEffect(() => {
@@ -145,11 +147,13 @@ const Router = () => {
           <Route path="employer" element={<Employer />}></Route>
           <Route path="jobseeker" element={<Jobseeker />}></Route>
           <Route path="jobs" element={<Job />}></Route>
+          <Route path="my-profile" element={<Profile />}></Route>
+          <Route path="my-profile2" element={<ProfileJB />}></Route>
 
 
 
 
-          <Route index element={<Homepage />}></Route>
+         
           <Route path="crypto" element={<Crypto />}></Route>
           <Route path="analytics" element={<Analytics />}></Route>
           <Route path="invest" element={<Invest />}></Route>
@@ -287,7 +291,7 @@ const Router = () => {
           <Route path="auth-success" element={<Success />}></Route>
             <Route path="auth-reset" element={<ForgotPassword />}></Route>
             <Route path="auth-register" element={<Register />}></Route>
-
+            <Route index element={<Auth />}></Route>
             <Route path="auth-login" element={<Login />}></Route>
             <Route path="auth" element={<Auth />}></Route>
             <Route path="reg-emp" element={<RegisterEmployer />}></Route>
